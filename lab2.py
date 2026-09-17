@@ -2,7 +2,7 @@ pt=input("enter pt:")
 key= int(input("Enter key: "))
 
 max=int(len(pt)/key)
-print(max)
+print("len=",max)
 
 
 i=0
@@ -13,12 +13,13 @@ while j<key:
     print("ek:",ek)
     print("i:",i)
     print("max:", max)
+    my_variables = [""] * key
     while i < max:
-        r1 = "".join([r1, pt[i*ek]])
+        print(pt[i*ek])
+        my_variables[i] = "".join([my_variables[i], pt[i*ek]])
         i=i+1
-    i=1
     max=max+1
     ek=ek-1
-    print(r1)
     j=j+1
-
+for k in range(0,len(pt)):
+    print(my_variables[i])
