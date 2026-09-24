@@ -1,5 +1,4 @@
 CT=(input("Enter Cipher Text: "))
-
 for inc in range (1,26):
     DT=""
     i=0

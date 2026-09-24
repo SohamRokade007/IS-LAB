@@ -1,25 +1,39 @@
-pt=input("enter pt:")
-key= int(input("Enter key: "))
+pt = input("Enter PT: ")
+key = int(input("Enter key: "))
 
-max=int(len(pt)/key)
-print("len=",max)
+max = int(len(pt) / key)
+print("len =", max)
 
+my_variables = [""] * key
 
-i=0
-ek=key+1
-j=0
-while j<key:
-    r1=""
-    print("ek:",ek)
-    print("i:",i)
-    print("max:", max)
-    my_variables = [""] * key
-    while i < max:
-        print(pt[i*ek])
-        my_variables[i] = "".join([my_variables[i], pt[i*ek]])
-        i=i+1
-    max=max+1
-    ek=ek-1
-    j=j+1
-for k in range(0,len(pt)):
-    print(my_variables[i])
+i = 0
+j = 0
+direction = 1
+
+while i < len(pt):
+
+    my_variables[j] = my_variables[j] + pt[i]
+
+    print("i:", i)
+    print("j:", j)
+    print("char:", pt[i])
+
+    if j == 0:
+        direction = 1
+    elif j == key - 1:
+        direction = -1
+
+    j = j + direction
+    i = i + 1
+
+print("Rails:")
+
+for k in range(key):
+    print(my_variables[k])
+
+ciphertext = ""
+
+for k in range(key):
+    ciphertext = ciphertext + my_variables[k]
+
+print("Cipher Text:", ciphertext)
